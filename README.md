@@ -55,7 +55,7 @@
 ---
 
 ## 🗺 ER図
-![ER Diagram](docs/er.png)
+![ER Diagram](docs/er.jpeg)
 
 - Users 1:N Children  
 - Children M:N Allergens（中間テーブル：ChildrenAllergens）  
