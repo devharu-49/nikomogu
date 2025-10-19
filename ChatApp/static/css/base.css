@@ -1,0 +1,32 @@
+/* 全画面に適用する内容を記載 */
+
+* {
+  float: none;
+  position: static;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 12px;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  min-height: 100vh;
+  width: 100vw;
+  color: var(--black);
+}
+
+input {
+  letter-spacing: 0.1em;
+  color: var(--black);
+}
+
+input:hover,
+button:hover {
+  cursor: pointer;
+}
+
+:hover {
+  transition: all 0.5s;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"   content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}{% endblock %}
+
+    <!-- CSSのスタイルをここに記述 --> 
+    <link rel="stylesheet" href="{{url_for('static',filename='css/styles-registration.css')}}"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Sawarabi+Mincho&display=swap"
+      rel="stylesheet"
+    />
+
+
+    <!-- ファビコン画像挿入 -->
+  </head>
+
+  <body>
+    <!-- ヘッダーブロックの開始 -->
+    <header>
+      <div class="registration-logo">
+        <img src="{{ url_for('static',filename='img/logo.png') }}" alt="logo">
+      </div>
+    </header>
+
+    <!-- ページ毎のコンテンツのブロック  -->
+    <main>
+      {% block body %}{% endblock %}
+    </main>
+
+    <!-- フッターブロックの開始 -->
+    <footer>
+      <div class="registration-footer">
+        <small>&copy; 2024 Nikomogu. All rights reserved.</small>
+      </div>
+    </footer>
+  </body>
+  
+</html>

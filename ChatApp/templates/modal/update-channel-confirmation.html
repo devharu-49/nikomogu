@@ -1,0 +1,44 @@
+<div id="update-channel-confirmation-modal" class="modal" data-modal="update-channel-confirmation-modal">
+    <div class="modal-content">
+        <form action="/update_channel" method="post">
+            <h3 class="modal-title">チャンネル編集</h3>
+            <div class="update-channel-confirmation-container">
+                <label for="update-channel-confirmation-input">チャンネル名</label>
+                <input type="text" name="channel-name" id="update-channel-display">
+            </div>
+
+            <div class="add-member-container">
+                <div class="add-member-header">
+                    <p class="add-member-header-member">メンバー</p>
+                    <p class="add-member-header-addtion">追加</p>
+                </div>
+
+                <!-- メンバーの一覧を取得 -->
+                <div class="add-member-checkbox">
+                    <label>メンバー一覧</label>
+                    <div id="selected-members-display"></div> <!-- 表示専用エリア -->
+                    <input type="hidden" name="selected-members" id="hidden-selected-members"><!-- サーバー送信用 -->
+                </div>
+
+                <div class="add-member-checkbox">
+                    <label for="member-01" class="add-member-checkbox">にこもぐ</label>
+                    <input type="checkbox" id="member-conf-01" name="checkbox01">
+                </div>
+
+                <div class="add-member-checkbox">
+                    <label for="member-02" class="add-member-checkbox">もぐこ</label>
+                    <input type="checkbox" id="member-conf-02" name="checkbox02">
+                </div>
+            </div>
+
+            <span class="add-channel-confirmation-text">この内容で登録しますか？</span>
+
+            <a href="" id="update-back-link" class="back-link">
+                <i class="fa-solid fa-angle-left"></i>
+                <p class="back">戻る</p>
+            </a>
+            
+            <button id="add-channel-confirmation-button">登録</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,168 @@
+/* headerとfooterの修飾 */
+/* ハンバーガーメニュの中身の修飾 */
+
+a {
+  text-decoration: none;  /* aタグのデフォルトでアンダーラインが表示されるため非表示に変更 */
+}
+
+ul,
+li {
+  list-style: none;  /* 「・」がデフォルトで表示されるため非表示に変更 */
+}
+
+/* メイン */
+
+main {
+  background-color: var(--white);
+  min-height: 90vh;
+  padding-top: 12vh;
+  display: flex;
+}
+
+.main {
+  margin: auto;
+  width: 100%;
+}
+
+.footer {
+  background-color: var(--pink);
+  height: 10vh;
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__inner {
+  color: var(--oleeve);
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2em;
+  height: inherit; /*親要素の高さを継承*/
+  position: relative; 
+  }
+
+.footer__inner p {
+  margin:0;
+}
+/* ヘッダー */
+.header {
+  background-color: var(--pink);
+  width: 100%;
+  height: 12vh;
+  position: fixed;  /* スクロールしたときにヘッダーを追従する */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999; /* ヘッダーは表示順を上 */
+}
+
+.header__inner {
+  padding: 0 20px 0 0; /*左右の余白確保*/
+  display: flex; /*ロゴとハンバーガーメニューを横に並べる*/
+  align-items: center;
+  justify-content: space-between;
+  height: inherit; /*親要素の高さを継承*/
+  position: relative;
+}
+
+/* ヘッダーのロゴ部分 */
+.header__title {
+  width: 100%;
+  height: 12vh;
+}
+
+
+.header__title img {
+  display: block;
+  height: 100%;
+}
+
+/* ヘッダーのナビ部分 */
+.header__nav {
+  position: absolute; /*絶対配置で位置を指定する*/
+  right: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  transform: translateX(100%); /*右側に移動する*/
+  background-color: var(--cream); /*ハンバーガーメニュークリック時のナビゲーションメニュー背景色*/
+  transition: ease .4s; /*ハンバーガーメニュークリック時のナビゲーションメニュー出現を遅延*/
+}
+
+.nav-items {
+  padding-top: 250px;
+  padding-bottom: 200px;
+}
+
+/* ナビのリンク */
+.nav-items__item a {
+  display: inline-block;
+  color: var(--oleeve);
+  width: fit-content;
+  display: block;
+  margin: auto;
+  font-size: 24px;
+  margin-bottom: 24px; /* メニュー間の余白を設定 */
+}
+
+.nav-items__item:last-child a {
+  margin-bottom: 0; /* 最後のメニューは余白がいらない */
+}
+
+/* ハンバーガーメニュー */
+.header__hamburger {
+  width: 48px;
+  height: 100%;
+}
+
+.hamburger {
+  background-color: transparent; /*フォーカスを当てるためにbuttonタグデフォルトスタイルを打ち消し*/
+  border-color: transparent; /*buttonタグデフォルトスタイルを打ち消し*/
+  z-index: 9999;
+}
+/* ハンバーガーメニューの線はspanタグ */
+.hamburger span {
+  width: 100%;
+  height: 1px;
+  background-color: var(--magenta);
+  position: relative;
+  transition: ease 0.4s; /*三本戦をクリックしてから0.4秒後に`ease-in`でゆっくり始まり、徐々に速くな*/
+  display: block;
+}
+
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+
+.hamburger span:nth-child(2) {
+  margin: 8px 0;
+}
+
+.hamburger span:nth-child(3) {
+  top: 0;
+}
+
+/*ハンバーガーメニュークリック後のスタイル ハンバーガーメニューをクリックしたらactiveクラスを付与する*/
+.header__nav.active {
+  transform: translateX(0); /*ハンバーガーメニューをクリックした後にactiveクラスが付いたら元に戻す*/
+}
+
+.hamburger.active span:nth-child(1) {
+  top: 5px;
+  transform: rotate(45deg); /*一番上の線が45度傾く*/
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0; /*真ん中の線が透明になる*/
+}
+
+.hamburger.active span:nth-child(3) {
+  top: -13px;
+  transform: rotate(-45deg); /*一番下の線が45度反対に傾く*/
+}
+

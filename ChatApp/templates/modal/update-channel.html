@@ -1,0 +1,31 @@
+<div id="update-channel-modal" class="modal" data-modal="update-channel-modal">
+    <div class="modal-content">
+        <h3 class="modal-title">チャンネル編集</h3>
+        <form class="update-channel-form" id="update-channel-form" method="post">
+            <div class="update-channel-container">
+                <label for="updated-channel-input">チャンネル名</label>
+                <input type="text" placeholder="にこもぐ" name="channel-name" id="update-channel-input-value">
+            </div>
+
+            <div class="add-member-container">
+                <div class="add-member-header">
+                    <p class="add-member-header-member">メンバー</p>
+                    <p class="add-member-header-addtion">追加</p>
+                </div>
+
+                <!-- メンバーの一覧を取得 -->
+                <div class="add-member-checkbox">
+                    <label for="member-01" class="add-member-checkbox">にこもぐ</label>
+                    <input type="checkbox" id="member-01" name="checkbox01">
+                </div>
+
+                <div class="add-member-checkbox">
+                    <label for="member-02" class="add-member-checkbox">もぐこ</label>
+                    <input type="checkbox" id="member-02" name="checkbox02">
+                </div>
+
+            </div>
+            <button id="add-channel-confirmation-button" data-modal-confirm-trigger="update-channel-confirmation-modal">登録</button>
+        </form>
+    </div>
+</div>
